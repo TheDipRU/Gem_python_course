@@ -1,28 +1,28 @@
 # Демо-файл: W1_U3/00_Demo_Numbers_Input.py
 
-# 1. Получение данных от пользователя (это всегда строка!)
-user_age_input = input("Введите ваш возраст: ")
-item_price_input = input("Введите цену товара: ")
+# 1. Получение данных (Ввод всегда возвращает строку)
+user_age_str = input("Введите ваш возраст: ")
+item_price_str = input("Введите цену товара: ")
 
-# 2. Преобразование типов (Type Casting)
-# Мы должны явно превратить строки в числа для математики
+# 2. Преобразование типов и демонстрация операторов
 try:
-    user_age_int = int(user_age_input)
-    item_price_float = float(item_price_input)
+    # Преобразуем ввод в int и float
+    user_age = int(user_age_str)
+    item_price = float(item_price_str)
 
-    # 3. Использование чисел в f-строках и расчетах
-    print(f"Через 10 лет вам будет: {user_age_int + 10} лет.")
+    # 3. Расчет: сложение, использование больших чисел
+    future_age = user_age + 10
+    total_revenue = 1_500_000  # Читабельное int
 
-    # 4. Расчет с float
-    tax_rate = 0.20  # 20% НДС
-    tax_amount = item_price_float * tax_rate
-    total_price = item_price_float + tax_amount
+    # 4. Расчет: деление и остаток
+    hours = 150
+    calc_hours = hours // 60
+    calc_minutes = hours % 60
 
-    print(f"Цена товара: {item_price_float}")
-    print(f"НДС (20%): {tax_amount}")
-    print(f"Итого к оплате: {total_price}")
+    print(f"Через 10 лет вам будет: {future_age} лет.")
+    print(f"Итоговая стоимость (с НДС 20%): {item_price * 1.20:.2f}") # {:.2f} - форматирование float
+    print(f"150 минут - это: {calc_hours} ч. {calc_minutes} мин.")
 
 except ValueError:
-    # (Мы рассмотрим try/except подробнее позже,
-    # но это базовая обработка ошибки, если пользователь ввел не число)
-    print("Ошибка: Вы ввели не число!")
+    # Мы рассмотрим это позже, но это защита, если пользователь введет "привет" вместо числа.
+    print("Ошибка ввода: Введите числовое значение.")
