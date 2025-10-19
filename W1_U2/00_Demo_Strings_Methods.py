@@ -1,4 +1,4 @@
-# Демо-файл: demo_W1_U2.py
+# Демо-файл: 00_Demo_Strings_Methods.py
 
 # 1. Объявление переменных
 dev_name = "максим"
